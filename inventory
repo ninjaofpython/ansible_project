@@ -1,0 +1,2 @@
+[example]
+172.xx.xx.x ansible_user=xxxx  ansible_password=xxxx

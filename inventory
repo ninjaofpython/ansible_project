@@ -1,2 +1,1 @@
-[example]
-172.xx.xx.x ansible_user=xxxx  ansible_password=xxxx
+172.xxx.xx.x ansible_user=xxxx  ansible_password=xxxx

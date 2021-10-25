@@ -1,0 +1,24 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - name: ensure jenkins directory on docker host
+    file:
+      state: directory
+      owner: 1000
+      group: 1000
+      path: /share/jenkins
+
+
+  - name: Pull the latest official jenkins docker container
+    docker_container:
+      image: jenkins/jenkins:lts-jdk11
+      name: jenkins
+      state: started
+      ports:
+          - "8080:8080"
+          - "50000:50000"
+      volumes:
+          - "/share/jenkins:/var/jenkins_home"
+      
